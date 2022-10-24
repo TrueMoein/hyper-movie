@@ -3,7 +3,7 @@ import { Autoplay } from "swiper";
 
 export default function HeaderSlider({ setBg }) {
   function getImage(number) {
-    return `http://busterhtml.mbkip3ms9u-e92498n216kr.p.temp-site.link/images/uploads/slider${number}.jpg`;
+    return `/slider${number}.jpg`;
   }
 
   return (
