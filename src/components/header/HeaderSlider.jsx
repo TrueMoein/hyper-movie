@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
+import MovieCard from "../movies/MovieCard";
 
 export default function HeaderSlider({ setBg }) {
   function getImage(number) {
@@ -32,11 +33,9 @@ export default function HeaderSlider({ setBg }) {
       >
         {[1, 2, 3, 4].map((number) => (
           <SwiperSlide key={number}>
-            <img
-              onMouseOver={(e) => setBg(getImage(number))}
-              className="w-full rounded"
-              src={getImage(number)}
-            />
+            <div onMouseOver={(e) => setBg(getImage(number))}>
+              <MovieCard img={getImage(number)} />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
