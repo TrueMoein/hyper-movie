@@ -9,13 +9,13 @@ export default function Header() {
 
   return (
     <header
-      className="py-12 transition-all duration-500 bg-cover bg-center"
+      className="transition-all duration-500 bg-cover bg-center pb-8 md:py-8"
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgb(0 0 0 / 80%), rgb(0 0 0 / 40%), rgb(0 0 0 / 70%)), url('${bg}')`,
+        backgroundImage: `linear-gradient(to bottom, rgb(30 41 59 / 100%), rgb(30 41 59 / 50%), rgb(30 41 59 / 20%)), url('${bg}')`,
       }}
     >
+      <Navigation />
       <div className="container">
-        <Navigation />
         <SearchBox />
         <FollowUs />
         <HeaderSlider setBg={setBg} />
