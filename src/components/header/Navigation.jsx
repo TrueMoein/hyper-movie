@@ -5,37 +5,49 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="flex items-center text-slate-300 bg-slate-900 p-4 md:container md:bg-transparent">
-        <div className="flex items-center">
-          <h1 className="text-3xl mr-12">
-            Hyper<span className="text-rose-500">Movies</span>
-            <p className="text-xs text-center text-slate-500 font-light">
-              Film Review
-            </p>
-          </h1>
+      <nav className="flex items-baseline text-slate-300 bg-slate-900 p-4 md:container md:bg-transparent">
+        <div className="flex items-baseline">
+          <a href="/">
+            <h1 className="text-3xl mr-12 text-white">
+              Hyper<span className="text-yellow-500">Movies</span>
+              <p className="text-xs text-center text-slate-500 font-light">
+                Film Review
+              </p>
+            </h1>
+          </a>
           <ul className="hidden md:flex text-sm lg:text-base gap-6 uppercase">
             <li>
-              <a href="#">Movies</a>
+              <a href="#" className="hover:text-white">
+                Movies
+              </a>
             </li>
             <li>
-              <a href="#">TV Shows</a>
+              <a href="#" className="hover:text-white">
+                TV Shows
+              </a>
             </li>
             <li>
-              <a href="#">People</a>
+              <a href="#" className="hover:text-white">
+                People
+              </a>
             </li>
             <li>
-              <a href="#">More</a>
+              <a href="#" className="hover:text-white">
+                More
+              </a>
             </li>
           </ul>
         </div>
         <div className="hidden md:block text-sm lg:text-base ml-auto uppercase">
           <ul className="flex gap-8">
             <li>
-              <a href="#">Login</a>
+              <a href="#" className="text-white">
+                Login
+              </a>
             </li>
             <li>
               <a
-                className="bg-rose-600 hover:bg-rose-500 px-6 py-3 rounded-2xl text-white"
+                className="bg-green-600 hover:bg-green-500 px-6 py-2 rounded-xl text-white"
                 href="#"
               >
                 Sign up
@@ -83,7 +95,7 @@ export default function Navigation() {
         </ul>
 
         <div className="mt-4 flex gap-4 justify-center items-center border-t-2 pt-4 border-slate-700">
-          <a href="#" className="text-xl ">
+          <a href="#" className="text-xl text-white">
             Login
           </a>
           <a href="#" className="bg-rose-600 rounded-xl py-2 px-4 text-white">

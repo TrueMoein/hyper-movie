@@ -18,9 +18,9 @@ export default function MoviesList() {
         <div className="md:flex gap-8 items-center md:mb-4">
           <h2 className="text-slate-300 text-2xl">What's Popular</h2>
 
-          <ul className="my-6 flex flex-col gap-4 md:gap-8 text-rose-300 md:flex-row">
+          <ul className="my-6 flex flex-col gap-4 md:gap-8 text-yellow-100 md:flex-row items-baseline">
             <li>Streaming</li>
-            <li>On TV</li>
+            <li className="text-yellow-300 text-xl">On TV</li>
             <li>For Rent</li>
             <li>In Theaters</li>
           </ul>
@@ -32,8 +32,8 @@ export default function MoviesList() {
         <div className="md:flex gap-8 items-center md:mb-4">
           <h2 className="text-slate-300 text-2xl">Free to Watch</h2>
 
-          <ul className="my-6 flex flex-col gap-4 md:gap-8 text-rose-300 md:flex-row">
-            <li>Movie</li>
+          <ul className="my-6 flex flex-col gap-4 md:gap-8 text-yellow-100 md:flex-row items-baseline">
+            <li className="text-yellow-300 text-xl">Movie</li>
             <li>TV</li>
           </ul>
         </div>
