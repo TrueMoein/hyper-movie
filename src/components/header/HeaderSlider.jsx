@@ -50,11 +50,7 @@ export default function HeaderSlider({ setBg }) {
                 setBg(`https://image.tmdb.org/t/p/w780/${movie.backdrop_path}`)
               }
             >
-              <MovieCard
-                img={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}
-                title={movie.title}
-                rate={movie.vote_average}
-              />
+              <MovieCard movie={movie} />
             </div>
           </SwiperSlide>
         ))}

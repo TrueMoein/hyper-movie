@@ -24,7 +24,7 @@ export default function Home() {
             <li>In Theaters</li>
           </ul>
         </div>
-        <MoviesListSlider movies={movies} />
+        {/* <MoviesListSlider movies={movies} /> */}
       </div>
 
       <div className="pt-8">
@@ -36,7 +36,7 @@ export default function Home() {
             <li>TV</li>
           </ul>
         </div>
-        <MoviesListSlider movies={movies} />
+        {/* <MoviesListSlider movies={movies} /> */}
       </div>
     </div>
   );
