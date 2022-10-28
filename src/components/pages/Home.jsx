@@ -1,6 +1,5 @@
 import React from "react";
-import MovieCard from "../movies/MovieCard";
-import MoviesListSlider from "./MoviesListSlider";
+import MoviesListSlider from "../main/MoviesListSlider";
 
 const movies = [
   "/slider1.jpg",
@@ -11,7 +10,7 @@ const movies = [
   "/slider1.jpg",
 ];
 
-export default function MoviesList() {
+export default function Home() {
   return (
     <div className="container">
       <div className="pt-8">
