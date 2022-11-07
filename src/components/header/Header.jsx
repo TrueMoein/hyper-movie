@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import FollowUs from "./FollowUs";
 import HeaderSlider from "./HeaderSlider";
 import Navigation from "./Navigation";
-import SearchBox from "./SearchBox";
+import SearchBox from "./SearchBox/SearchBox";
 
 export default function Header() {
   const location = useLocation();

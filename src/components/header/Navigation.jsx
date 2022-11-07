@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 
 const menuItems = [
   {
@@ -22,6 +24,7 @@ const menuItems = [
 
 export default function Navigation() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const { user, logout } = useContext(UserContext);
 
   function activeClass({ isActive }) {
     return isActive ? "text-yellow-300" : "hover:text-white";
@@ -50,21 +53,32 @@ export default function Navigation() {
           </ul>
         </div>
         <div className="hidden md:block text-sm lg:text-base ml-auto uppercase">
-          <ul className="flex gap-8">
-            <li>
-              <NavLink to="/login" className="text-white">
-                Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="bg-green-600 hover:bg-green-500 px-6 py-2 rounded-xl text-white"
-                to="/signup"
-              >
-                Sign up
-              </NavLink>
-            </li>
-          </ul>
+          {Object.keys(user).length ? (
+            <>
+              <div>
+                {user.name}
+                <span onClick={logout} className="text-red-700 ml-4">
+                  Logout
+                </span>
+              </div>
+            </>
+          ) : (
+            <ul className="flex gap-8">
+              <li>
+                <NavLink to="/login" className="text-white">
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="bg-green-600 hover:bg-green-500 px-6 py-2 rounded-xl text-white"
+                  to="/signup"
+                >
+                  Sign up
+                </NavLink>
+              </li>
+            </ul>
+          )}
         </div>
         <div className="md:hidden ml-auto">
           <button onClick={() => setIsOpenMenu(!isOpenMenu)}>
