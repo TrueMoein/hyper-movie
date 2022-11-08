@@ -9,12 +9,6 @@ export default function Profile() {
   const { user, session } = useContext(UserContext);
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (!session) {
-  //     navigate("/login", { replace: true });
-  //   }
-  // }, [session]);
-
   return session ? (
     <div>
       <h2>Profile page</h2>

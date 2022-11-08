@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function MovieCard({ movie }) {
+export default function MovieCard({ movie, type = "movie", imgSize = "w780" }) {
   return (
-    <Link to={`/movies/${movie.id}`}>
+    <Link to={`/${type === "movie" ? "movies" : "tv"}/${movie.id}`}>
       <div className="bg-gray-300 aspect-[2/3] relative rounded overflow-hidden">
         <img
-          src={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/${imgSize}/${movie.poster_path}`}
           className="object-cover w-full h-full"
           alt="test"
         />
 
         <div className="flex flex-col justify-end p-8 absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-[#0f172a12] to-[#0f172a81] hover:from-[#0f172a2a] hover:to-[#0f172a9c]">
-          <h3>{movie.title}</h3>
+          <h3>{movie.title || movie.name}</h3>
 
           <div className="flex gap-2 mt-2">
             <span className="text-yellow-400">
