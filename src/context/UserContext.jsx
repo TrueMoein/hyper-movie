@@ -10,15 +10,19 @@ export const UserContext = createContext({ user: {}, session: "" });
 export default function UserProvider({ children }) {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
   const [session, setSession] = useState(() => localStorage.getItem("session"));
   const location = useLocation();
 
-  console.log(location);
-
   async function getUserData() {
     const { data } = await fench.get(`account`);
-
+    fetchFavoriteMovies(data.id);
     setUser(data);
+  }
+
+  async function fetchFavoriteMovies(id = user.id) {
+    const favResult = await fench.get(`account/${id}/favorite/movies`);
+    setFavoriteMovies(favResult.data.results);
   }
 
   useEffect(() => {
@@ -61,7 +65,16 @@ export default function UserProvider({ children }) {
   }
 
   return (
-    <UserContext.Provider value={{ user, login, session, logout }}>
+    <UserContext.Provider
+      value={{
+        user,
+        login,
+        session,
+        logout,
+        favoriteMovies,
+        fetchFavoriteMovies,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );
